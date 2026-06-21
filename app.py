@@ -9,7 +9,9 @@ import plotly.express as px
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet
 from io import BytesIO
-genai.configure(api_key="AQ.Ab8RN6KZbPsYyELVP_nXiuBgtEJvyVHexxquRdYRMUi-zSh_Ow")
+genai.configure(
+    api_key=st.secrets["GEMINI_API_KEY"]
+)
 
 model = genai.GenerativeModel("gemini-2.5-flash")
 embedding_model = SentenceTransformer(
